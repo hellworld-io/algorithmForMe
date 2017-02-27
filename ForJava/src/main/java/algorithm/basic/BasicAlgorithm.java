@@ -1,16 +1,26 @@
 package main.java.algorithm.basic;
 
 public class BasicAlgorithm {
-	public int sumNumbers(int iLoopNumbers) {
+	/**
+	 * 1 ~ iTotalNumbers 까지의 합
+	 * @param iTotalNumbers
+	 * @return
+	 */
+	public int sumTotalNumbers(int iTotalNumbers) {
 		int iSumVal = 0;
 		
-		for (int idx = 0; idx <= iLoopNumbers; idx++ ) {
+		for (int idx = 0; idx <= iTotalNumbers; idx++ ) {
 			iSumVal += idx;
 		}
 		
 		return iSumVal;
 	}
 	
+	/**
+	 * 피보나치 수열
+	 * @param iFiboNum
+	 * @return
+	 */
 	public int[] getFibo(int iFiboNum) {
 		int[] arrResult = new int[iFiboNum];
 		int iNext = 2;
@@ -22,15 +32,13 @@ public class BasicAlgorithm {
 			iNext++;
 		}
 		
-		 
-		
 		return arrResult;
 	}
 	
 	public static void main(String[] args) {
 		BasicAlgorithm basic = new BasicAlgorithm();
 		
-		int result = basic.sumNumbers(5);
+		int result = basic.sumTotalNumbers(5);
 		System.out.println("result =========> " + result);
 		
 		int[] arrFibo = basic.getFibo(8);
