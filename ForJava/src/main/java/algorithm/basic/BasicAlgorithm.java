@@ -111,6 +111,26 @@ public class BasicAlgorithm {
 		return arrResult;
 	}
 	
+	/**
+	 * 숫자배열 정렬
+	 * @param arrNumbers
+	 * @return
+	 */
+	public int[] setSortArray(int[] arrNumbers) {
+		int[] arrResult = arrNumbers;
+		
+		for(int idx1 = 0; idx1 < arrNumbers.length-1; idx1++){
+			for(int idx2= idx1+1; idx2<arrNumbers.length; idx2++){
+				if(arrResult[idx1] > arrResult[idx2]){
+					int iTep = arrResult[idx1];
+					arrResult[idx1] = arrResult[idx2];
+					arrResult[idx2] = iTep;
+				}
+			}
+		}
+		
+		return arrResult;
+	}
 	
 	public static void main(String[] args) {
 		BasicAlgorithm basic = new BasicAlgorithm();
@@ -129,7 +149,7 @@ public class BasicAlgorithm {
 		System.out.println("fResult =========> " + fResult);
 		
 		//[TODO] 만약 들어오는 숫자의 값의 범위나 값에 대한 정의가 명확하지 않은 경우에 대한 고민이 필요함.
-		int[] arrNumbers = {10, 15, 20, 50, 100};
+		int[] arrNumbers = {40, 35, 10, 50, 100};
 		int iMaxResult = basic.getMaxNumber(arrNumbers);
 		int iMinResult = basic.getMinNumber(arrNumbers);
 		System.out.println("iMaxResult =========> " + iMaxResult);
@@ -140,6 +160,12 @@ public class BasicAlgorithm {
 		
 		for(int i =0; i < arrRankResult.length; i++){
 			System.out.println("arrRankResult =========> " + arrRankResult[i]);
+		}
+		
+		
+		int[] arrResult = basic.setSortArray(arrNumbers);
+		for(int i =0; i < arrResult.length; i++){
+			System.out.println("arrResult =========> " + arrResult[i]);
 		}
 	}
 
